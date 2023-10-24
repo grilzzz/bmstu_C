@@ -5,15 +5,19 @@
 
 void revarray(void* base, size_t nel, size_t width) 
 {
-    int *first = base;
-    int *last = base + (nel - 1) * width;
+    char *first = base;
+    char *last = base + (nel - 1) * width;
     while (first < last)
     {
-        int f1 = *first;
-        *first = *last;
-        *last  = f1;
-        first = first + (width/4);
-        last = last - (width/4);
+        for (char i = 0; i < width; ++i) {
+            char f1 = *first;
+            *first = *last;
+            *last = f1;
+            first++;
+            last++;
+        }
+        first = first;
+        last = last - (width * 2);
     }
 }
 
