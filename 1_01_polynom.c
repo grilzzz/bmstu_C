@@ -1,39 +1,13 @@
-
 # include <stdio.h>
 # include <math.h>
 int main (int argc , char ** argv )
 {
-    int n, x, xn;
-    int ans = 0;
-    scanf("%d", &n);
-    scanf("%d", &x);
+    long long n, x, xn;
+    long long ans = 0, ans2 = 0;
+    scanf("%lld", &n);
+    scanf("%lld", &x);
     if (n > 0) {
-        scanf("%d", &xn);
-        ans = xn;
-        for (int i = 0; i < n; i++) {
-            scanf("%d", &xn);
-            ans = (ans * x) + xn;
-        }
-        printf("%d\n", ans);
-    } 
-    else {
-        printf("1");
-    }
-    return 0;
-}
-
-// or
- 
-# include <stdio.h>
-# include <math.h>
-int main (int argc , char ** argv )
-{
-    int n, x, xn;
-    int ans = 0, ans2 = 0;
-    scanf("%d", &n);
-    scanf("%d", &x);
-    if (n > 0) {
-        scanf("%d", &xn);
+        scanf("%lld", &xn);
         ans = xn;
         if (n == 0)
         {
@@ -43,9 +17,9 @@ int main (int argc , char ** argv )
         {
             ans2 = xn * n;
         }
-        // printf("ans - %d ans2 - %d\n", ans, ans2);
-        for (int i = 0; i < n; i++) {
-            scanf("%d", &xn);
+        // printf("ans - %lld ans2 - %lld\n", ans, ans2);
+        for (long long i = 0; i < n; i++) {
+            scanf("%lld", &xn);
             ans = (ans * x) + xn;
             if (i < n - 1)
             {
@@ -53,11 +27,11 @@ int main (int argc , char ** argv )
             }
             // printf("ans - %d ans2 - %d\n", ans, ans2);
         }
-        printf("%d %d\n", ans, ans2);
+        printf("%lld %lld\n", ans, ans2);
     } 
     else {
-        scanf("%d", &xn);
-        printf("%d 1", xn);
+        scanf("%lld", &xn);
+        printf("%lld 1", xn);
     }
     return 0;
 }
