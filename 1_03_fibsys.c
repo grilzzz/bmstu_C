@@ -3,47 +3,37 @@
 
 int main (int argc , char ** argv )
 {
-    long long n;
-    int ans[100];
-    scanf("%lld", &n);
-    if (n == 0)
-    {
-        printf("0");
+    long long x[8], y[8];
+    long long a = -1, i = 1;
+
+    for (long long ind = 0; ind < 8; ind++){
+        scanf("%lld", &y[ind]);
     }
-    else
-    {
-    long long lst[100];
-    lst[0] = 1;
-    lst[1] = 2;
-    for (int i=2; i < 100; i++) {
-        lst[i] = lst[i-1] + lst[i-2];
-        // printf("%lld\n", lst[i]);
-    }
-    int i = 0;
-    while (n >= lst[i]) {
-        i++;
-    }
-    i--;
-    int ind = 0;
-    while (i >= 0) {
-        if (lst[i] <= n) {
-            // ans++;
-            ans[ind] = 1;
-            n -= lst[i];
-            // printf("%d ", lst[i]);
-        }
-        else
-        {
-            ans[ind] = 0;
-        }
-        ind++;
-        i--;
-    }
-    for (int i = 0; i < ind; i++)
-    {
-        printf("%d", ans[i]);
-    }
+    for (long long ind = 0; ind < 8; ind++){
+        scanf("%lld", &x[ind]);
     }
 
+
+    long long ans = 1;
+    for (long long i = 0; i < 8; i++) {
+        long long f = 0;
+        for (long long j = 0; j < 8; j++) {
+            if (x[i] == y[j]) {
+                y[j] = a;
+                f = 1;
+                break;
+            }
+        }
+        if (f == 0) {
+            ans = 0;
+            break;
+        }
+    }
+    if (ans == 0) {
+            printf("no");
+        }
+    else {
+        printf("yes");
+    }
     return 0;
 }
