@@ -49,16 +49,13 @@ void select_sort(int f, int l, int* arr)
 void quick_sort(int f, int l, int *arr, int m)
 {
 label:
-    if (f + m < l)
-    {
+    if (f + m < l) {
         int q = partition(f, l, arr);
-        if (q - f < l - q)
-        {
+        if (q - f < l - q) {
             quick_sort(f, q-1, arr, m);
             f = q + 1;
         }
-        else
-        {
+        else {
             quick_sort(q+1, l, arr, m);
             l = q - 1;
         }
